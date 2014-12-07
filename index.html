@@ -9,9 +9,8 @@
 	<meta name="author" content="Your Name">
 
 	
-	<meta name="description" content="Build Octopress Blog Record Build Octopress Blog on Github 本篇教程在OSX Yosemite 10.10.1下完成 首先查看本机的git和ruby版本
-~$ git &ndash;version git version 1.9.3 ( &hellip;">
-	
+	<meta name="description" content="Android技术博客">
+	<meta name="keywords" content="Android,java">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -49,10 +48,11 @@
 </div>
 
 <nav id="main-nav"><ul class="main">
-    <li><a href="/">Blog</a></li>
-    <li><a href="http://about.me/shashankmehta">About</a></li>
-    <li><a href="/blog/archives">Archives</a></li>
+    <li><a href="/">首页</a></li>
+    <li><a href="/about">关于</a></li>
+    <li><a href="/blog/archives">归档</a></li>
 </ul>
+
 </nav>
 <nav id="sub-nav">
 	<div class="social">
@@ -105,14 +105,18 @@
 <time datetime="2014-12-07T13:11:05+08:00" data-updated="true" itemprop="datePublished"></time></div>
 		<div class="tags">
 
+
+	<a class='category' href='/blog/categories/octopress/'>octopress</a>
+
+
 </div>
+		
+			<span class="comments"><a href="/blog/2014/12/07/build-octopress-blog-record/#disqus_thread">Comments</a></span>
 		
 	</div>
 	<h1 class="title" itemprop="name"><a href="/blog/2014/12/07/build-octopress-blog-record/" itemprop="url">Build Octopress Blog Record</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		<h1>Build Octopress Blog on Github </h1>
-
-<p>本篇教程在OSX Yosemite 10.10.1下完成</p>
+		<p>本篇教程在OSX Yosemite 10.10.1下完成</p>
 
 <p>首先查看本机的git和ruby版本<br/>
 ~$ git &ndash;version <br/>
@@ -143,15 +147,9 @@ git clone git://github.com/sstephenson/rbenv.git .rbenv</p>
 <p>在.bashrc文件加入 <br/>
 export PATH=&ldquo;$PATH:$HOME/.rbenv/bin&rdquo; # Add rbenv to PATH for scripting</p>
 
-<p>接着执行以下安装命令 <br/>
-git clone git://github.com/imathis/octopress.git octopress<br/>
-cd octopress<br/>
-gem install bundler<br/>
-rbenv rehash<br/>
-bundle install</p>
 
 		
-		
+		<a href="/blog/2014/12/07/build-octopress-blog-record/" class="more-link">阅读全文&rarr;</a>
 	</div>
 
 </article>
@@ -161,7 +159,8 @@ bundle install</p>
     
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
+</nav>
+</div>
 			</div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 
@@ -173,21 +172,24 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
 	</div>
 	
 
+<script type="text/javascript">
+      var disqus_shortname = 'oec2015';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
