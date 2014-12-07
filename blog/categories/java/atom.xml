@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: java | My Octopress Blog]]></title>
+  <title><![CDATA[Category: java | Kejiwen Blog]]></title>
   <link href="http://tangqifa.github.io/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2014-12-07T22:31:11+08:00</updated>
+  <updated>2014-12-07T23:00:35+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Qifa]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -141,20 +141,23 @@ public class Singleton {
 
 <pre><code class="java">private static Class getClass(String classname) throws ClassNotFoundException {     
        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();     
-       if(classLoader == null) 
-           classLoader = Singleton.class.getClassLoader();     
-           return (classLoader.loadClass(classname));        
+       if(classLoader == null) {
+          classLoader = Singleton.class.getClassLoader();     
+     }
+     return (classLoader.loadClass(classname));           
  }  
 </code></pre>
 
 <p>Effective Java作者Josh Bloch 提倡用enum的方式，它不仅能避免多线程同步问题，而且还能防止反序列化重新创建新的对象，可谓是很坚强的壁垒啊，不过，个人认为由于1.5中才加入enum特性，这种写法不太常见，代码如下：</p>
 
-<pre><code class="java">public enum Singleton {  
+<pre>
+public enum Singleton {  
      INSTANCE;  
      public void whateverMethod() {  
      }  
- }  
-</code></pre>
+ }
+ </pre>
+
 ]]></content>
   </entry>
   

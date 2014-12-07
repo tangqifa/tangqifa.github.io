@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Kejiwen Blog]]></title>
   <link href="http://tangqifa.github.io/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2014-12-07T22:31:11+08:00</updated>
+  <updated>2014-12-07T23:00:35+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Qifa]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -183,32 +183,25 @@
 
 <p>此外，如果单例由不同的类装载器装入，那便有可能存在多个单例类的实例。假定不是远端存取，例如一些servlet容器对每个servlet使用完全不同的类  装载器，这样的话如果有两个servlet访问一个单例类，它们就都会有各自的实例。解决方式是：</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="n">Class</span> <span class="nf">getClass</span><span class="o">(</span><span class="n">String</span> <span class="n">classname</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ClassNotFoundException</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">ClassLoader</span> <span class="n">classLoader</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getContextClassLoader</span><span class="o">();</span>
-</span><span class='line'>       <span class="k">if</span><span class="o">(</span><span class="n">classLoader</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-</span><span class='line'>           <span class="n">classLoader</span> <span class="o">=</span> <span class="n">Singleton</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getClassLoader</span><span class="o">();</span>
-</span><span class='line'>           <span class="k">return</span> <span class="o">(</span><span class="n">classLoader</span><span class="o">.</span><span class="na">loadClass</span><span class="o">(</span><span class="n">classname</span><span class="o">));</span>
-</span><span class='line'> <span class="o">}</span>
-</span><span class='line'> <span class="err">```</span>
-</span><span class='line'><span class="n">Effective</span> <span class="n">Java作者Josh</span> <span class="n">Bloch</span> <span class="n">提倡用enum的方式</span><span class="err">，</span><span class="n">它不仅能避免多线程同步问题</span><span class="err">，</span><span class="n">而且还能防止反序列化重新创建新的对象</span><span class="err">，</span><span class="n">可谓是很坚强的壁垒啊</span><span class="err">，</span><span class="n">不过</span><span class="err">，</span><span class="n">个人认为由于1</span><span class="o">.</span><span class="mi">5</span><span class="n">中才加入enum特性</span><span class="err">，</span><span class="n">这种写法不太常见</span><span class="err">，</span><span class="n">代码如下</span><span class="err">：</span>
-</span></code></pre></td></tr></table></div></figure>
+<pre><code class="java">private static Class getClass(String classname) throws ClassNotFoundException {     
+       ClassLoader classLoader = Thread.currentThread().getContextClassLoader();     
+       if(classLoader == null) {
+          classLoader = Singleton.class.getClassLoader();     
+     }
+     return (classLoader.loadClass(classname));           
+ }  
+</code></pre>
 
+<p>Effective Java作者Josh Bloch 提倡用enum的方式，它不仅能避免多线程同步问题，而且还能防止反序列化重新创建新的对象，可谓是很坚强的壁垒啊，不过，个人认为由于1.5中才加入enum特性，这种写法不太常见，代码如下：</p>
 
-<p> java
-public enum Singleton {<br/>
-     INSTANCE;<br/>
-     public void whateverMethod() {<br/>
-     }<br/>
- }<br/>
-&#8220;`</p>
+<pre>
+public enum Singleton {  
+     INSTANCE;  
+     public void whateverMethod() {  
+     }  
+ }
+ </pre>
+
 ]]></content>
   </entry>
   
