@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | My Octopress Blog]]></title>
   <link href="http://tangqifa.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2014-12-07T19:51:12+08:00</updated>
+  <updated>2014-12-07T22:31:11+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -18,46 +18,69 @@
     <link href="http://tangqifa.github.io/blog/2014/12/07/build-octopress-blog-record/"/>
     <updated>2014-12-07T13:11:05+08:00</updated>
     <id>http://tangqifa.github.io/blog/2014/12/07/build-octopress-blog-record</id>
-    <content type="html"><![CDATA[<p>本篇教程在OSX Yosemite 10.10.1下完成</p>
+    <content type="html"><![CDATA[<p><em>本篇教程在OSX Yosemite 10.10.1下完成</em></p>
+
+<h2>依赖环境</h2>
 
 <p>首先查看本机的git和ruby版本<br/>
-~$ git &ndash;version <br/>
-git version 1.9.3 (Apple Git-50)</p>
-
-<p>~$ ruby &ndash;version <br/>
-ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]</p>
-
-<p>以上，默认ruby版本是2.0.0，需要升级到最新的2.1版本以上才能顺利进行后面的步骤。</p>
+<code>
+~$ git --version   
+git version 1.9.3 (Apple Git-50)
+</code>
+<code>
+~$ ruby --version   
+ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]
+</code>
+以上，默认ruby版本是2.0.0，需要升级到最新的2.1版本以上才能顺利进行后面的步骤。</p>
 
 <p>安装brew，下面的步骤有依赖brew <br/>
-~$ ruby -e &ldquo;$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)&rdquo;</p>
-
-<p>安装rvm，并自动更新ruby到最新版本 <br/>
-~$ \curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &ndash;ruby</p>
-
-<p>切换到最新的版本 <br/>
+<code>
+~$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</code>
+安装rvm，并自动更新ruby到最新版本 <br/>
+<code>
+~$ \curl -L https://get.rvm.io | bash -s stable --ruby
+</code>
+切换到最新的版本<br/>
+<code>
 ~$ rvm use current
-Using /Users/tangqifa/.rvm/gems/ruby-2.1.5</p>
-
-<p>查看是否为最新版本 <br/>
-~$ ruby &ndash;version <br/>
-ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]</p>
-
-<p>安装rbenv，并添加到环境变量中 <br/>
-git clone git://github.com/sstephenson/rbenv.git .rbenv</p>
-
-<p>在.bashrc文件加入 <br/>
-export PATH=&ldquo;$PATH:$HOME/.rbenv/bin&rdquo; # Add rbenv to PATH for scripting</p>
+Using /Users/tangqifa/.rvm/gems/ruby-2.1.5   
+</code>
+查看是否为最新版本<br/>
+<code>
+~$ ruby --version   
+ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]   
+</code>
+安装rbenv，并添加到环境变量中 <br/>
+<code>
+git clone git://github.com/sstephenson/rbenv.git .rbenv    
+</code>
+在.bashrc文件加入
+<code>  
+export PATH="$PATH:$HOME/.rbenv/bin" # Add rbenv to PATH for scripting
+</code></p>
 
 <!-- more -->
 
 
-<p>接着执行以下安装命令 <br/>
-git clone git://github.com/imathis/octopress.git octopress<br/>
-cd octopress<br/>
-gem install bundler<br/>
-rbenv rehash<br/>
-bundle install</p>
+<h2>安装过程</h2>
+
+<p>接着执行以下安装命令
+<code>  
+git clone git://github.com/imathis/octopress.git octopress  
+cd octopress  
+gem install bundler  
+rbenv rehash  
+bundle install
+</code></p>
+
+<h2>遇到的问题总结</h2>
+
+<ol>
+<li>ruby版本必须升级到最新版本，在Yosemite上</li>
+<li>初始化name.github.io最好是空项目，否则在提交的时候容易出现问题</li>
+</ol>
+
 ]]></content>
   </entry>
   

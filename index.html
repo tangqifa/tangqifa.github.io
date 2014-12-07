@@ -100,6 +100,110 @@
   
 
 
+<time datetime="2014-12-07T20:01:21+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/java/'>java</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2014/12/07/che-di-li-jie-dan-li-mo-shi/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/12/07/che-di-li-jie-dan-li-mo-shi/" itemprop="url">彻底理解单例模式</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>在众多的设计模式中，单例模式应该是用得较多的一种模式，同时它也相对简单，但是也容易出错，特别是在多线程的情况下，因此有必要彻底研究清楚。</p>
+
+<h2>什么是单例模式</h2>
+
+<p>单例模式，也叫单子模式，是一种常用的软件设计模式。在应用这个模式时，单例对象的类必须保证只有一个实例存在。</p>
+
+<h2>为什么会有单例模式</h2>
+
+<ol>
+<li>许多时候整个系统只需要拥有一个的全局对象，这样有利于我们协调系统整体的行为。比如在Android应用程序开发时，通常用一个单例对象去读取存放在配置文件中的信息，然后在Activity或者Service中用这个单例对象统一的这些信息；</li>
+<li>避免重复创建多个对象，提高性能。</li>
+</ol>
+
+
+<h2>怎么写单例模式</h2>
+
+<p>在Java中通常有两种写法：</p>
+
+<ul>
+<li>懒汉模式(艺名：双重校验锁模式)</li>
+</ul>
+
+
+<p>懒汉模式，指全局的单例实例在第一次被使用时构建，如果不使用，对不起我很懒，有多懒，就是懒得创建，懒得理你；</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">Singleton</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">static</span>  <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">if</span><span class="o">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+</span><span class='line'>             <span class="kd">synchronized</span><span class="o">(</span><span class="n">Singleton</span><span class="o">.</span><span class="na">class</span><span class="o">){</span>
+</span><span class='line'>                 <span class="k">if</span><span class="o">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+</span><span class='line'>                     <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Singleton</span><span class="o">();</span>
+</span><span class='line'>                  <span class="o">}</span>
+</span><span class='line'>              <span class="o">}</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">INSTANCE</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>  <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这个写法只能在JDK1.5以后有效，原因是在1.5以后的版本关键字<code>volatile</code>才有了具体含义，至此之前，<code>volatile</code>只作为保留关键字，并没有具体含义；</p>
+
+<p><code>volatile</code>含义是：当用于一个作用域时，读和写建立了一个happens-before关系，类似于申请和释放一个互斥锁，简单点说就是：用<code>volatile</code>修饰的变量，线程在每次使用变量的时候，都会读取变量最后修改的值。</p>
+
+<p><em>现在我们来彻底理解这种写法：</em></p>
+
+
+		
+		<a href="/blog/2014/12/07/che-di-li-jie-dan-li-mo-shi/" class="more-link">阅读全文&rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
 <time datetime="2014-12-07T13:11:05+08:00" data-updated="true" itemprop="datePublished"></time></div>
 		<div class="tags">
 
@@ -114,36 +218,65 @@
 	</div>
 	<h1 class="title" itemprop="name"><a href="/blog/2014/12/07/build-octopress-blog-record/" itemprop="url">Build Octopress Blog Record</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		<p>本篇教程在OSX Yosemite 10.10.1下完成</p>
+		<p><em>本篇教程在OSX Yosemite 10.10.1下完成</em></p>
 
-<p>首先查看本机的git和ruby版本<br/>
-~$ git &ndash;version <br/>
-git version 1.9.3 (Apple Git-50)</p>
+<h2>依赖环境</h2>
 
-<p>~$ ruby &ndash;version <br/>
-ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]</p>
+<p>首先查看本机的git和ruby版本</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ git --version   
+</span><span class='line'>git version 1.9.3 (Apple Git-50)</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ ruby --version   
+</span><span class='line'>ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]</span></code></pre></td></tr></table></div></figure>
+
 
 <p>以上，默认ruby版本是2.0.0，需要升级到最新的2.1版本以上才能顺利进行后面的步骤。</p>
 
-<p>安装brew，下面的步骤有依赖brew <br/>
-~$ ruby -e &ldquo;$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)&rdquo;</p>
+<p>安装brew，下面的步骤有依赖brew</p>
 
-<p>安装rvm，并自动更新ruby到最新版本 <br/>
-~$ \curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &ndash;ruby</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></code></pre></td></tr></table></div></figure>
 
-<p>切换到最新的版本 <br/>
-~$ rvm use current
-Using /Users/tangqifa/.rvm/gems/ruby-2.1.5</p>
 
-<p>查看是否为最新版本 <br/>
-~$ ruby &ndash;version <br/>
-ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]</p>
+<p>安装rvm，并自动更新ruby到最新版本</p>
 
-<p>安装rbenv，并添加到环境变量中 <br/>
-git clone git://github.com/sstephenson/rbenv.git .rbenv</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ \curl -L https://get.rvm.io | bash -s stable --ruby</span></code></pre></td></tr></table></div></figure>
 
-<p>在.bashrc文件加入 <br/>
-export PATH=&ldquo;$PATH:$HOME/.rbenv/bin&rdquo; # Add rbenv to PATH for scripting</p>
+
+<p>切换到最新的版本</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ rvm use current
+</span><span class='line'>Using /Users/tangqifa/.rvm/gems/ruby-2.1.5   </span></code></pre></td></tr></table></div></figure>
+
+
+<p>查看是否为最新版本</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ ruby --version   
+</span><span class='line'>ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]   </span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装rbenv，并添加到环境变量中</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/sstephenson/rbenv.git .rbenv    </span></code></pre></td></tr></table></div></figure>
+
+
+<p>在.bashrc文件加入</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export PATH="$PATH:$HOME/.rbenv/bin" # Add rbenv to PATH for scripting</span></code></pre></td></tr></table></div></figure>
+
 
 
 		

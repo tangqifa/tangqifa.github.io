@@ -84,51 +84,97 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 	<h1 class="title" itemprop="name">Build Octopress Blog Record</h1>
-	<div class="entry-content" itemprop="articleBody"><p>本篇教程在OSX Yosemite 10.10.1下完成</p>
+	<div class="entry-content" itemprop="articleBody"><p><em>本篇教程在OSX Yosemite 10.10.1下完成</em></p>
 
-<p>首先查看本机的git和ruby版本<br/>
-~$ git &ndash;version <br/>
-git version 1.9.3 (Apple Git-50)</p>
+<h2>依赖环境</h2>
 
-<p>~$ ruby &ndash;version <br/>
-ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]</p>
+<p>首先查看本机的git和ruby版本</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ git --version   
+</span><span class='line'>git version 1.9.3 (Apple Git-50)</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ ruby --version   
+</span><span class='line'>ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]</span></code></pre></td></tr></table></div></figure>
+
 
 <p>以上，默认ruby版本是2.0.0，需要升级到最新的2.1版本以上才能顺利进行后面的步骤。</p>
 
-<p>安装brew，下面的步骤有依赖brew <br/>
-~$ ruby -e &ldquo;$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)&rdquo;</p>
+<p>安装brew，下面的步骤有依赖brew</p>
 
-<p>安装rvm，并自动更新ruby到最新版本 <br/>
-~$ \curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &ndash;ruby</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></code></pre></td></tr></table></div></figure>
 
-<p>切换到最新的版本 <br/>
-~$ rvm use current
-Using /Users/tangqifa/.rvm/gems/ruby-2.1.5</p>
 
-<p>查看是否为最新版本 <br/>
-~$ ruby &ndash;version <br/>
-ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]</p>
+<p>安装rvm，并自动更新ruby到最新版本</p>
 
-<p>安装rbenv，并添加到环境变量中 <br/>
-git clone git://github.com/sstephenson/rbenv.git .rbenv</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ \curl -L https://get.rvm.io | bash -s stable --ruby</span></code></pre></td></tr></table></div></figure>
 
-<p>在.bashrc文件加入 <br/>
-export PATH=&ldquo;$PATH:$HOME/.rbenv/bin&rdquo; # Add rbenv to PATH for scripting</p>
+
+<p>切换到最新的版本</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ rvm use current
+</span><span class='line'>Using /Users/tangqifa/.rvm/gems/ruby-2.1.5   </span></code></pre></td></tr></table></div></figure>
+
+
+<p>查看是否为最新版本</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~$ ruby --version   
+</span><span class='line'>ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]   </span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装rbenv，并添加到环境变量中</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/sstephenson/rbenv.git .rbenv    </span></code></pre></td></tr></table></div></figure>
+
+
+<p>在.bashrc文件加入</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export PATH="$PATH:$HOME/.rbenv/bin" # Add rbenv to PATH for scripting</span></code></pre></td></tr></table></div></figure>
+
 
 <!-- more -->
 
 
-<p>接着执行以下安装命令 <br/>
-git clone git://github.com/imathis/octopress.git octopress<br/>
-cd octopress<br/>
-gem install bundler<br/>
-rbenv rehash<br/>
-bundle install</p>
+<h2>安装过程</h2>
+
+<p>接着执行以下安装命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress  
+</span><span class='line'>cd octopress  
+</span><span class='line'>gem install bundler  
+</span><span class='line'>rbenv rehash  
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>遇到的问题总结</h2>
+
+<ol>
+<li>ruby版本必须升级到最新版本，在Yosemite上</li>
+<li>初始化name.github.io最好是空项目，否则在提交的时候容易出现问题</li>
+</ol>
+
 </div>
 
 </article>
 
-	<div class="share">
+	<!-- <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	
@@ -136,7 +182,20 @@ bundle install</p>
 	<a class="addthis_counter addthis_pill_style"></a>
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div> &#8211;>
+
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
 </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
 
 
