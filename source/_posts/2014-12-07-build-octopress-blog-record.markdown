@@ -3,7 +3,9 @@ layout: post
 title: "Build Octopress Blog Record"
 date: 2014-12-07 13:11:05 +0800
 comments: true
-categories: 
+categories:Octopress
+description:"博客配置过程"
+keywords:Octopress 
 ---
 Build Octopress Blog on Github 
 ===
