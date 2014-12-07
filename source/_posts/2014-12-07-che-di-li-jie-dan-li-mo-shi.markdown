@@ -40,7 +40,6 @@ public class Singleton {
         return INSTANCE;
     }
   }
-
 ```
 这个写法只能在JDK1.5以后有效，原因是在1.5以后的版本关键字`volatile`才有了具体含义，至此之前，`volatile`只作为保留关键字，并没有具体含义；
 
@@ -117,17 +116,19 @@ public class Singleton {
 ``` java
 private static Class getClass(String classname) throws ClassNotFoundException {     
        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();     
-       if(classLoader == null) 
-           classLoader = Singleton.class.getClassLoader();     
-           return (classLoader.loadClass(classname));        
+       if(classLoader == null) {
+          classLoader = Singleton.class.getClassLoader();     
+     }
+     return (classLoader.loadClass(classname));           
  }  
  ```
+ 
 Effective Java作者Josh Bloch 提倡用enum的方式，它不仅能避免多线程同步问题，而且还能防止反序列化重新创建新的对象，可谓是很坚强的壁垒啊，不过，个人认为由于1.5中才加入enum特性，这种写法不太常见，代码如下：
 
-``` java
+<pre>
 public enum Singleton {  
      INSTANCE;  
      public void whateverMethod() {  
      }  
- }  
-```
+ }
+ </pre>
