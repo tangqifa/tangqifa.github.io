@@ -3,12 +3,10 @@ layout: post
 title: "Build Octopress Blog Record"
 date: 2014-12-07 13:11:05 +0800
 comments: true
-categories:Octopress
-description:"博客配置过程"
-keywords:Octopress 
+categories: Octopress
+description: "博客配置过程"
+keywords: Octopress 
 ---
-Build Octopress Blog on Github 
-===
 本篇教程在OSX Yosemite 10.10.1下完成
 
 首先查看本机的git和ruby版本  
@@ -39,7 +37,7 @@ git clone git://github.com/sstephenson/rbenv.git .rbenv
 
 在.bashrc文件加入   
 export PATH="$PATH:$HOME/.rbenv/bin" # Add rbenv to PATH for scripting
-
+<!-- more -->
 接着执行以下安装命令   
 git clone git://github.com/imathis/octopress.git octopress  
 cd octopress  

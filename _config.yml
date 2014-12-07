@@ -78,5 +78,5 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:oec2015
+disqus_short_name: oec2015
 disqus_show_comment_count: true
