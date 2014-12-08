@@ -5,8 +5,8 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Build Octopress Blog Record - Kejiwen Blog</title>
-	<meta name="author" content="Qifa">
+	<title>Build Octopress Blog Record - Tech&Life</title>
+	<meta name="author" content="tangqifa">
 
 	
 	<meta name="description" content="博客配置过程">
@@ -17,7 +17,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="" rel="alternate" title="Kejiwen Blog" type="application/atom+xml">
+	<link href="" rel="alternate" title="Tech&Life" type="application/atom+xml">
 	
 	<link rel="canonical" href="http://tangqifa.github.io/blog/2014/12/07/build-octopress-blog-record/">
 	<link href="/favicon.png" rel="shortcut icon">
@@ -26,7 +26,10 @@
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
+	<!-- For Syntax Highlighting -->
+<script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<link href="/stylesheets/tomorrow-night.css" media="screen, projection" rel="stylesheet" type="text/css">
+
   
 
 </head>
@@ -41,12 +44,18 @@
 	<script src="/javascripts/md5.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('.profilepic').append("<img src='https://lh5.googleusercontent.com/-q0qZ14mLVEI/AAAAAAAAAAI/AAAAAAAAABM/KkLdZgthP8Q/s120-c/photo.jpg' alt='Profile Picture' style='width: 90px;' />");
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("tangqifa@126.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
 		});
 	</script>
 	
 </div>
 
+<div>
+	<h1><a href="/">Tech&Life</a></h1>
+	
+		<h2 style="color:#666">积淀孕育创新，技术改变未来</h2>
+	
+</div>
 <nav id="main-nav"><html xmlns:wb="http://open.weibo.com/wb">
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <ul class="main">
@@ -63,9 +72,15 @@
 <nav id="sub-nav">
 	<div class="social">
 		
+			<a class="email" href="mailto:tangqifa@126.com" title="Email">Email</a>
 		
 		
 		
+		
+			<a class="twitter" href="http://twitter.com/tanqifa" title="Twitter">Twitter</a>
+		
+		
+			<a class="github" href="https://github.com/tangqifa" title="GitHub">GitHub</a>
 		
 		
 		
@@ -184,6 +199,8 @@
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	
+	<a class="addthis_button_tweet"></a>
+	
 	
 	<a class="addthis_counter addthis_pill_style"></a>
 	</div>
@@ -214,7 +231,7 @@
 			</div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 
-    Qifa
+    tangqifa
 
 
 Design credit: <a href="http://kejiwen.com">kejiwen.com</a>
@@ -244,6 +261,16 @@ Design credit: <a href="http://kejiwen.com">kejiwen.com</a>
 
 
 
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
 
 
 

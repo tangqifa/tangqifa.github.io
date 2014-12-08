@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: octopress | Kejiwen Blog]]></title>
+  <title><![CDATA[Category: octopress | Tech&Life]]></title>
   <link href="http://tangqifa.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2014-12-08T14:02:45+08:00</updated>
+  <updated>2014-12-08T16:01:25+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
-    <name><![CDATA[Qifa]]></name>
-    
+    <name><![CDATA[tangqifa]]></name>
+    <email><![CDATA[tangqifa@126.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
