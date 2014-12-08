@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 算法 | Tech&Life]]></title>
   <link href="http://tangqifa.github.io/blog/categories/suan-fa/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2014-12-08T16:01:25+08:00</updated>
+  <updated>2014-12-08T17:45:11+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
     <name><![CDATA[tangqifa]]></name>
@@ -38,8 +38,7 @@
 <p>  对于这两种方式，你会发现第一种比第二种快太多了，在这里StringBuffer的优势荡然无存。其真实的原因就在于JVM做了一下优化处理，其实String name = ”I ” + ”am ” + ”chenssy ” ;在JVM眼中就是String name = ”I am  chenssy ” ;这样的方式对于JVM而言，真的是不要什么时间。但是如果我们在这个其中增加一个String对象，那么JVM就会按照原来那种规范来构建String对象了。</p></li>
 <li><p>字符串拼接方式</p>
 
-<p>   对于字符串而言我们经常是要对其进行拼装处理的，在java中提高了三种拼装的方法：+、concat()以及append()方法。这三者之间存在什么区别呢？先看如下示例：
-&lt;</p></li>
+<p>   对于字符串而言我们经常是要对其进行拼装处理的，在java中提高了三种拼装的方法：+、concat()以及append()方法。这三者之间存在什么区别呢？先看如下示例：</p></li>
 </ol>
 
 
