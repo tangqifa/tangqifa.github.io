@@ -31,7 +31,6 @@ categories: 算法
 8. 字符串拼接方式 
 
       对于字符串而言我们经常是要对其进行拼装处理的，在java中提高了三种拼装的方法：+、concat()以及append()方法。这三者之间存在什么区别呢？先看如下示例：
-<
 <!-- more -->
 <pre>
 public class StringTest {
