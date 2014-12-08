@@ -5,12 +5,18 @@
 	<script src="{{ root_url }}/javascripts/md5.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('.profilepic').append("<img src='https://lh5.googleusercontent.com/-q0qZ14mLVEI/AAAAAAAAAAI/AAAAAAAAABM/KkLdZgthP8Q/s120-c/photo.jpg' alt='Profile Picture' style='width: 90px;' />");
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("{{ site.email | downcase }}") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
 		});
 	</script>
 	{% endif %}
 </div>
 {% include custom/header.html %}
+<div>
+	<h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+	{% if site.subtitle %}
+		<h2 style="color:#666">{{ site.subtitle }}</h2>
+	{% endif %}
+</div>
 <nav id="main-nav">{% include navigation.html %}</nav>
 <nav id="sub-nav">
 	<div class="social">

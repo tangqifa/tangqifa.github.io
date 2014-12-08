@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://tangqifa.github.io
-title: Kejiwen Blog
-subtitle: A blogging for Tech&Life.
-author: Qifa
+title: Tech&Life
+subtitle: 积淀孕育创新，技术改变未来
+author: tangqifa
 simple_search: https://www.google.com/search
 description:
 
@@ -15,6 +15,9 @@ description:
 # Additionally, %o will give you the ordinal representation of the day
 date_format: "ordinal"
 
+
+# RSS feeds can list your email address if you like
+email: tangqifa@126.com
 # ----------------------- #
 #    Jekyll & Plugins     #
 # ----------------------- #
@@ -56,6 +59,15 @@ default_asides: [asides/category_list.html, asides/recent_posts.html, asides/git
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
+# Github repositories
+github_user: tangqifa
+github_repo_count: 0
+github_show_profile_link: true
+github_skip_forks: true
+
+# Twitter
+twitter_user: tanqifa
+twitter_tweet_button: true
 
 # Disqus Comments
 disqus_short_name: qifa
