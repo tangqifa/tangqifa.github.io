@@ -41,16 +41,22 @@
 	<script src="/javascripts/md5.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('.profilepic').append("<img src='https://lh5.googleusercontent.com/-q0qZ14mLVEI/AAAAAAAAAAI/AAAAAAAAABM/KkLdZgthP8Q/s120-c/photo.jpg' alt='Profile Picture' style='width: 160px;' />");
+			$('.profilepic').append("<img src='https://lh5.googleusercontent.com/-q0qZ14mLVEI/AAAAAAAAAAI/AAAAAAAAABM/KkLdZgthP8Q/s120-c/photo.jpg' alt='Profile Picture' style='width: 90px;' />");
 		});
 	</script>
 	
 </div>
 
-<nav id="main-nav"><ul class="main">
+<nav id="main-nav"><html xmlns:wb="http://open.weibo.com/wb">
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<ul class="main">
     <li><a href="/">首页</a></li>
     <li><a href="/about">关于</a></li>
     <li><a href="/blog/archives">归档</a></li>
+    <li></li>
+</ul>
+<ul class="social">
+<wb:follow-button uid="2991975565" type="red_1" width="67" height="24" ></wb:follow-button>
 </ul>
 
 </nav>
