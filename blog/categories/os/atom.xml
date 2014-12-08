@@ -4,7 +4,7 @@
   <title><![CDATA[Category: os | Kejiwen Blog]]></title>
   <link href="http://tangqifa.github.io/blog/categories/os/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2014-12-08T13:45:22+08:00</updated>
+  <updated>2014-12-08T13:54:55+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
     <name><![CDATA[Qifa]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[完全重新安装Yosemite正式版]]></title>
-    <link href="http://tangqifa.github.io/blog/2014/12/08/wan-quan-zhong-xin-an-zhuang-yosemitezheng-shi-ban/"/>
-    <updated>2014-12-08T13:41:54+08:00</updated>
-    <id>http://tangqifa.github.io/blog/2014/12/08/wan-quan-zhong-xin-an-zhuang-yosemitezheng-shi-ban</id>
+    <link href="http://tangqifa.github.io/blog/2014/10/08/wan-quan-zhong-xin-an-zhuang-yosemitezheng-shi-ban/"/>
+    <updated>2014-10-08T13:41:54+08:00</updated>
+    <id>http://tangqifa.github.io/blog/2014/10/08/wan-quan-zhong-xin-an-zhuang-yosemitezheng-shi-ban</id>
     <content type="html"><![CDATA[<p>之前由于自己的mac用过一年多了，垃圾文件比较多，各种软件以及环境参数的配置也很乱，趁Yosemite正式版刚好发布了，就想完全重新安装，现把安装过程和所遇到的问题记录如下。</p>
 
 <p>在完全重新安装之前，我是用AppStore升级安装过一次，不过升级之后，几个常用的软件都不能用了，经池建强老师的Yosemite上篇文章的指点，这些软件都能用了，但是还是有一些配置环境参数问题，遂决定完全重装一次。</p>

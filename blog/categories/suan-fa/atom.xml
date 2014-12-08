@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 算法 | Kejiwen Blog]]></title>
   <link href="http://tangqifa.github.io/blog/categories/suan-fa/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2014-12-08T13:45:22+08:00</updated>
+  <updated>2014-12-08T13:54:55+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
     <name><![CDATA[Qifa]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[算法之字符串]]></title>
-    <link href="http://tangqifa.github.io/blog/2014/12/08/suan-fa-zhi-zi-fu-chuan/"/>
-    <updated>2014-12-08T13:34:48+08:00</updated>
-    <id>http://tangqifa.github.io/blog/2014/12/08/suan-fa-zhi-zi-fu-chuan</id>
+    <link href="http://tangqifa.github.io/blog/2014/06/12/suan-fa-zhi-zi-fu-chuan/"/>
+    <updated>2014-06-12T13:34:48+08:00</updated>
+    <id>http://tangqifa.github.io/blog/2014/06/12/suan-fa-zhi-zi-fu-chuan</id>
     <content type="html"><![CDATA[<blockquote><p>可以证明：字符串操作是计算机程序设计中最常见的行为。</p></blockquote>
 
 <h2>Java中优雅地使用字符串</h2>
