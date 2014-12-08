@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: android | Kejiwen Blog]]></title>
+  <link href="http://tangqifa.github.io/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://tangqifa.github.io/"/>
+  <updated>2014-12-08T13:45:22+08:00</updated>
+  <id>http://tangqifa.github.io/</id>
+  <author>
+    <name><![CDATA[Qifa]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Android5.0第二个预览版Root教程]]></title>
+    <link href="http://tangqifa.github.io/blog/2014/12/08/android5-dot-0di-er-ge-yu-lan-ban-rootjiao-cheng/"/>
+    <updated>2014-12-08T13:43:55+08:00</updated>
+    <id>http://tangqifa.github.io/blog/2014/12/08/android5-dot-0di-er-ge-yu-lan-ban-rootjiao-cheng</id>
+    <content type="html"><![CDATA[<h2>1.刷官方ROM</h2>
+
+<ul>
+<li>终端下运行命令：<code>adb reboot-bootloader</code></li>
+<li>解压官方最新下载包，运行脚本：<code>./flash-all.sh</code>即可一键刷机</li>
+</ul>
+
+
+<h2>2.刷第三方Recovery</h2>
+
+<p> 终端运行命令：<code>fastboot flash recovery recovery-clockwork-6.0.4.5-hammerhead.img</code>为第四步做准备</p>
+
+<h2>3.刷第三方内核</h2>
+
+<p>终端运行命令：<code>fastboot flash boot boot.img</code>，由于SElinux安全的限制，目前只能通过刷修改过的内核，实现root</p>
+
+<h2>4.Recovery Mode下刷入SuperSU.zip</h2>
+
+<p>终端运行命令：<code>adb reboot recovery</code></p>
+
+<p>以上所要用到的全部软件下载地址：<a href="http://pan.baidu.com/s/1vqkCu">百度网盘</a></p>
+]]></content>
+  </entry>
+  
+</feed>

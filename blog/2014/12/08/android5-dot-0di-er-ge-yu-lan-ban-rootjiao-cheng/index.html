@@ -5,11 +5,12 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Categories - Kejiwen Blog</title>
+	<title>Android5.0第二个预览版Root教程 - Kejiwen Blog</title>
 	<meta name="author" content="Qifa">
 
 	
-	<meta name="description" content=" Octopress [ 1 ] Java [ 1 ] 算法 [ 1 ] Os [ 1 ] Android [ 1 ] ">
+	<meta name="description" content="Android5.0第二个预览版Root教程 1.刷官方ROM 终端下运行命令：adb reboot-bootloader
+解压官方最新下载包，运行脚本：./flash-all.sh即可一键刷机 2.刷第三方Recovery 终端运行命令：fastboot flash recovery &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@
 
 	<link href="" rel="alternate" title="Kejiwen Blog" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://tangqifa.github.io/blog/categories/">
+	<link rel="canonical" href="http://tangqifa.github.io/blog/2014/12/08/android5-dot-0di-er-ge-yu-lan-ban-rootjiao-cheng/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -88,26 +89,56 @@
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="page">
-    
-    <h1 class="title">Categories</h1>
-    
-    <div class="entry-content"><ul>
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Android5.0第二个预览版Root教程</h1>
+	<div class="entry-content" itemprop="articleBody"><h2>1.刷官方ROM</h2>
 
-    <li><a href="/blog/categories/octopress/">Octopress</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/java/">Java</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/算法/">算法</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/os/">Os</a> [ 1 ]</li>
-
-    <li><a href="/blog/categories/android/">Android</a> [ 1 ]</li>
-
+<ul>
+<li>终端下运行命令：<code>adb reboot-bootloader</code></li>
+<li>解压官方最新下载包，运行脚本：<code>./flash-all.sh</code>即可一键刷机</li>
 </ul>
 
+
+<h2>2.刷第三方Recovery</h2>
+
+<p> 终端运行命令：<code>fastboot flash recovery recovery-clockwork-6.0.4.5-hammerhead.img</code>为第四步做准备</p>
+
+<h2>3.刷第三方内核</h2>
+
+<p>终端运行命令：<code>fastboot flash boot boot.img</code>，由于SElinux安全的限制，目前只能通过刷修改过的内核，实现root</p>
+
+<h2>4.Recovery Mode下刷入SuperSU.zip</h2>
+
+<p>终端运行命令：<code>adb reboot recovery</code></p>
+
+<p>以上所要用到的全部软件下载地址：<a href="http://pan.baidu.com/s/1vqkCu">百度网盘</a></p>
 </div>
+
 </article>
+
+	<!-- <div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div> &#8211;>
+
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
 
 
 <section id="comment">
@@ -115,7 +146,6 @@
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 </section>
-
 </div>
 			</div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
@@ -134,8 +164,8 @@ Design credit: <a href="http://kejiwen.com">kejiwen.com</a>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://tangqifa.github.io/blog/categories/index.html';
-        var disqus_url = 'http://tangqifa.github.io/blog/categories/index.html';
+        var disqus_identifier = 'http://tangqifa.github.io/blog/2014/12/08/android5-dot-0di-er-ge-yu-lan-ban-rootjiao-cheng/';
+        var disqus_url = 'http://tangqifa.github.io/blog/2014/12/08/android5-dot-0di-er-ge-yu-lan-ban-rootjiao-cheng/';
         var disqus_script = 'embed.js';
       
     (function () {

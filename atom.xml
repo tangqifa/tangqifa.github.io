@@ -4,7 +4,7 @@
   <title><![CDATA[Kejiwen Blog]]></title>
   <link href="http://tangqifa.github.io/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2014-12-08T12:35:53+08:00</updated>
+  <updated>2014-12-08T13:45:22+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
     <name><![CDATA[Qifa]]></name>
@@ -12,6 +12,256 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Android5.0第二个预览版Root教程]]></title>
+    <link href="http://tangqifa.github.io/blog/2014/12/08/android5-dot-0di-er-ge-yu-lan-ban-rootjiao-cheng/"/>
+    <updated>2014-12-08T13:43:55+08:00</updated>
+    <id>http://tangqifa.github.io/blog/2014/12/08/android5-dot-0di-er-ge-yu-lan-ban-rootjiao-cheng</id>
+    <content type="html"><![CDATA[<h2>1.刷官方ROM</h2>
+
+<ul>
+<li>终端下运行命令：<code>adb reboot-bootloader</code></li>
+<li>解压官方最新下载包，运行脚本：<code>./flash-all.sh</code>即可一键刷机</li>
+</ul>
+
+
+<h2>2.刷第三方Recovery</h2>
+
+<p> 终端运行命令：<code>fastboot flash recovery recovery-clockwork-6.0.4.5-hammerhead.img</code>为第四步做准备</p>
+
+<h2>3.刷第三方内核</h2>
+
+<p>终端运行命令：<code>fastboot flash boot boot.img</code>，由于SElinux安全的限制，目前只能通过刷修改过的内核，实现root</p>
+
+<h2>4.Recovery Mode下刷入SuperSU.zip</h2>
+
+<p>终端运行命令：<code>adb reboot recovery</code></p>
+
+<p>以上所要用到的全部软件下载地址：<a href="http://pan.baidu.com/s/1vqkCu">百度网盘</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[完全重新安装Yosemite正式版]]></title>
+    <link href="http://tangqifa.github.io/blog/2014/12/08/wan-quan-zhong-xin-an-zhuang-yosemitezheng-shi-ban/"/>
+    <updated>2014-12-08T13:41:54+08:00</updated>
+    <id>http://tangqifa.github.io/blog/2014/12/08/wan-quan-zhong-xin-an-zhuang-yosemitezheng-shi-ban</id>
+    <content type="html"><![CDATA[<p>之前由于自己的mac用过一年多了，垃圾文件比较多，各种软件以及环境参数的配置也很乱，趁Yosemite正式版刚好发布了，就想完全重新安装，现把安装过程和所遇到的问题记录如下。</p>
+
+<p>在完全重新安装之前，我是用AppStore升级安装过一次，不过升级之后，几个常用的软件都不能用了，经池建强老师的Yosemite上篇文章的指点，这些软件都能用了，但是还是有一些配置环境参数问题，遂决定完全重装一次。</p>
+
+<p>经网上搜一大堆教程，想要完全重装，必须开机同时按住<code>option</code>或者<code>command + R</code>然后把硬盘东西全部抹去，这样一来，问题来了，系统没了，完全启动不了，万幸的是我之前已经硬盘资料备份了，但是没有做系统备份，现在也只有通过网络恢复了，但是等待数小时的结果是，网络异常，在线更新恢复失败。故，只要拿出杀手锏，U盘安装。</p>
+
+<h2>安装前准备</h2>
+
+<ul>
+<li>16G U盘一个</li>
+<li>Windows电脑一台（如果你还有另一台mac电脑，就不需要下面的镜像烧制软件了，mac自带就有，也方便得多）</li>
+<li>Yosemite系统镜像一份 <a href="http://pan.baidu.com/s/1mgqSdfy">Yosemite 14A389 正式版</a></li>
+<li>镜像烧制软件 <a href="http://www.acutesystems.com/scrtm.htm">TransMac</a>付费软件，试用期15天，完全够用</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>安装详细过程</h2>
+
+<ul>
+<li>以管理员身份打开TransMac，如下图
+<img src="http://kejiwen.com/wp-content/uploads/2014/10/TransMac.jpg" alt="TransMac截图" /></li>
+<li>格式化U盘为Mac格式，如图第一个红框 Format Disk for Mac</li>
+<li>然后Restore with Disk Image，选择下载好的Yosemite镜像</li>
+<li>大概等5分钟左右，就完成写入，U盘系统制作完毕</li>
+<li>把U盘插上要安装的Mac上，开机按住 <code>option</code>选择U盘即可开始安装了。</li>
+</ul>
+
+
+<h2>Android开发环境配置</h2>
+
+<ul>
+<li>IDE下载 <a href="https://dl.google.com/android/studio/install/0.8.6/android-studio-bundle-135.1339820-mac.dmg">Android studio</a> 或则<a href="https://dl.google.com/android/adt/adt-bundle-mac-x86_64-20140702.zip">ADT</a></li>
+<li>JDK1.6 <a href="http://support.apple.com/kb/dl1572">苹果官方提供安装包</a></li>
+<li>安装好jdk1.6后大多数软件10.9.5下不能正常工作的软件基本都能正常运行了</li>
+</ul>
+
+
+<h2>终端配置</h2>
+
+<ul>
+<li>iTerm <a href="http://iterm2.com/">下载</a></li>
+<li>编辑<code>/etc/bashrc</code>文件，将<code>PS1的值</code>改为<code>\W\$</code>主要是解决名称过长问题</li>
+</ul>
+
+
+<h2>其他软件</h2>
+
+<ul>
+<li>如下图，大家按需下载，反正我基本上就这些
+<img src="http://kejiwen.com/wp-content/uploads/2014/10/soft-set.png" alt="TransMac截图" /></li>
+</ul>
+
+
+<p>以上，基本就是我全新安装Yosemite的全过程。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[算法之字符串]]></title>
+    <link href="http://tangqifa.github.io/blog/2014/12/08/suan-fa-zhi-zi-fu-chuan/"/>
+    <updated>2014-12-08T13:34:48+08:00</updated>
+    <id>http://tangqifa.github.io/blog/2014/12/08/suan-fa-zhi-zi-fu-chuan</id>
+    <content type="html"><![CDATA[<blockquote><p>可以证明：字符串操作是计算机程序设计中最常见的行为。</p></blockquote>
+
+<h2>Java中优雅地使用字符串</h2>
+
+<ol>
+<li><p>String类是final的，不可被继承。String类源码签名：<code>public final class String</code></p></li>
+<li><p>String类是的本质是字符数组char[], 并且其值不可改变。源码中声明：<code>private final char value[]</code>;</p></li>
+<li><p>String类对象有个特殊的创建的方式，就是直接指定比如 <code>String s = "abc"</code>，<code>"abc"</code>就表示一个字符串对象。而<code>s</code>是<code>"abc"</code>对象的地址，也叫做<code>"abc"</code>对象的引用。</p></li>
+<li><p>String对象可以通过<code>“+”</code>串联。串联后会生成新的字符串。</p></li>
+<li><p>Java运行时会维护一个String Pool（String池），JavaDoc翻译为<code>“字符串缓冲区”</code>。String池用来存放运行时中产生的各种字符串，并且池中的字符串的内容<code>不重复</code>。</p></li>
+<li><p>辅助类StringBuilder和StringBuffer。StringBuffer优点是<code>线程安全</code>，缺点是<code>速度慢</code>；而StringBuilder是1.5后新增类，优点是<code>速度快</code>，缺点是<code>非线程安全</code>。</p></li>
+<li><p>String VS StringBuilder VS StringBuffer：String是字符串常量 (<code>不可变</code>)，StringBuilder和StringBuffer是字符串变量(<code>可变</code>)；他们的主要区别在于性能，由于String字符串不变性，因此在每次对 String 类型进行改变的时候其实都等同于生成了一个新的 String 对象，然后将指针指向新的 String 对象，所以经常改变内容的字符串最好不要用 String ，因为每次生成对象都会对系统性能产生影响，特别当内存中无引用对象多了以后， JVM 的 GC 就会开始工作，那速度是一定会相当慢的。而如果是使用 StringBuffer或者StringBuilder类则结果就不一样了，每次结果都会对 StringBuffer 对象本身进行操作，而不是生成新的对象，再改变对象引用。所以在一般情况下推荐使用 StringBuffer ，特别是字符串对象经常改变的情况下。但是并不是所有的String字符串操作都会比StringBuffer慢，在某些特殊的情况下，String字符串的拼接会被JVM解析成StringBuilder对象拼接，在这种情况下String的速度比StringBuffer的速度快。如：</p>
+
+<pre><code> String name = ”I  ” + ”am ” + ”chenssy ” ;
+ StringBuffer name = new StringBuffer(”I ”).append(” am ”).append(” chenssy ”);
+</code></pre>
+
+<p>  对于这两种方式，你会发现第一种比第二种快太多了，在这里StringBuffer的优势荡然无存。其真实的原因就在于JVM做了一下优化处理，其实String name = ”I ” + ”am ” + ”chenssy ” ;在JVM眼中就是String name = ”I am  chenssy ” ;这样的方式对于JVM而言，真的是不要什么时间。但是如果我们在这个其中增加一个String对象，那么JVM就会按照原来那种规范来构建String对象了。</p></li>
+<li><p>字符串拼接方式</p>
+
+<p>   对于字符串而言我们经常是要对其进行拼装处理的，在java中提高了三种拼装的方法：+、concat()以及append()方法。这三者之间存在什么区别呢？先看如下示例：
+&lt;</p></li>
+</ol>
+
+
+<!-- more -->
+
+
+<pre>
+public class StringTest {
+    public static void main(String[] args) {
+        //+
+        long start_01 = System.currentTimeMillis();
+        String a = "a";
+        for(int i = 0 ; i < 100000 ; i++){
+            a += "b";
+        }
+        long end_01 = System.currentTimeMillis();
+        System.out.println("  +   所消耗的时间：" + (end_01 - start_01) + "毫米"); 
+        //concat()
+        long start_02 = System.currentTimeMillis();
+        String c = "c";
+        for(int i = 0 ; i < 100000 ; i++){
+            c = c.concat("d");
+        }
+        long end_02 = System.currentTimeMillis();
+        System.out.println("concat所消耗的时间：" + (end_02 - start_02) + "毫米");     
+        //append
+        long start_03 = System.currentTimeMillis();
+        StringBuffer e = new StringBuffer("e");
+        for(int i = 0 ; i < 100000 ; i++){
+            e.append("d");
+        }
+        long end_03 = System.currentTimeMillis();
+        System.out.println("append所消耗的时间：" + (end_03 - start_03) + "毫米");
+    }
+}
+</pre>
+
+
+<hr />
+
+<p>Output:</p>
+
+<p><code>+</code>所消耗的时间：19080毫米</p>
+
+<p><code>concat</code>所消耗的时间：9089毫米</p>
+
+<p><code>append</code>所消耗的时间：10毫米</p>
+
+<p>从上面的运行结果可以看出，append()速度最快，concat()次之，+最慢。原因请看下面分解:</p>
+
+<ol>
+<li><p> <code>+</code>方式拼接字符串
+在前面我们知道编译器对+进行了优化，它是使用StringBuilder的append()方法来进行处理的，我们知道StringBuilder的速度比StringBuffer的速度更加快，但是为何运行速度还是那样呢？主要是因为编译器使用append()方法追加后要同toString()转换成String字符串，也就说  str +=”b”等同于str = new StringBuilder(str).append(&ldquo;b&rdquo;).toString();它变慢的关键原因就在于new StringBuilder()和toString()，这里可是创建了10W个StringBuilder对象，而且每次还需要将其转换成String，速度能不慢么？</p></li>
+<li><p>concat()方法拼接字符串</p></li>
+</ol>
+
+
+<pre>
+public String concat(String str) {
+    int otherLen = str.length();
+    if (otherLen == 0) {
+        return this;
+    }
+    char buf[] = new char[count + otherLen];
+    getChars(0, count, buf, 0);
+    str.getChars(0, otherLen, buf, count);
+    return new String(0, count + otherLen, buf);
+    }
+    </pre>
+
+
+<pre><code>这是concat()的源码，它看上去就是一个数字拷贝形式，我们知道数组的处理速度是非常快的，但是由于该方法最后是这样的：return new String(0, count + otherLen, buf);这同样也创建了10W个字符串对象，这是它变慢的根本原因。
+</code></pre>
+
+<p>3.append()方法拼接字符串</p>
+
+<pre>
+public synchronized StringBuffer append(String str) {
+    super.append(str);
+        return this;
+    }
+    </pre>
+
+
+<p> StringBuffer的append()方法是直接使用父类AbstractStringBuilder的append()方法，该方法的源码如下：
+ <pre>
+public AbstractStringBuilder append(String str) {
+    if (str == null) str = &ldquo;null&rdquo;;
+        int len = str.length();
+    if (len == 0) return this;
+    int newCount = count + len;
+    if (newCount > value.length)
+        expandCapacity(newCount);
+    str.getChars(0, len, value, count);
+    count = newCount;
+    return this;
+    }
+    </pre>
+     与concat()方法相似，它也是进行字符数组处理的，加长，然后拷贝，但是请注意它最后是返回并没有返回一个新串，而是返回本身，也就说这这个10W次的循环过程中，它并没有产生新的字符串对象。通过上面的分析，我们需要在合适的场所选择合适的字符串拼接方式，但是并不一定就要选择append()和concat()方法，原因在于+根据符合我们的编程习惯，只有到了使用append()和concat()方法确实是可以对我们系统的效率起到比较大的帮助，才会考虑，同时鄙人也真的没有怎么用过concat()方法。</p>
+
+<h2>相关算法总结</h2>
+
+<ol>
+<li>Hash算法</li>
+<li>加密解密算法</li>
+<li>匹配算法
+
+<ol>
+<li>KMP</li>
+<li>其他</li>
+<li>正则</li>
+</ol>
+</li>
+<li>查找算法</li>
+<li>比较算法</li>
+<li>压缩算法</li>
+</ol>
+
+
+<h2>相关面试题解析</h2>
+
+<ol>
+<li>字符串翻转</li>
+<li>其他</li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[彻底理解单例模式]]></title>

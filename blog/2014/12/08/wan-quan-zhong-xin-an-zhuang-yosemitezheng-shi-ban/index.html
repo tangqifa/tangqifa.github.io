@@ -1,0 +1,223 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>完全重新安装Yosemite正式版 - Kejiwen Blog</title>
+	<meta name="author" content="Qifa">
+
+	
+	<meta name="description" content="完全重新安装Yosemite正式版 之前由于自己的mac用过一年多了，垃圾文件比较多，各种软件以及环境参数的配置也很乱，趁Yosemite正式版刚好发布了，就想完全重新安装，现把安装过程和所遇到的问题记录如下。 在完全重新安装之前，我是用AppStore升级安装过一次，不过升级之后， &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Kejiwen Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://tangqifa.github.io/blog/2014/12/08/wan-quan-zhong-xin-an-zhuang-yosemitezheng-shi-ban/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='https://lh5.googleusercontent.com/-q0qZ14mLVEI/AAAAAAAAAAI/AAAAAAAAABM/KkLdZgthP8Q/s120-c/photo.jpg' alt='Profile Picture' style='width: 90px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><html xmlns:wb="http://open.weibo.com/wb">
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<ul class="main">
+    <li><a href="/">首页</a></li>
+    <li><a href="/about">关于</a></li>
+    <li><a href="/blog/archives">归档</a></li>
+    <li></li>
+</ul>
+<ul class="social">
+<wb:follow-button uid="1715773834" type="red_1" width="67" height="24" ></wb:follow-button>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">完全重新安装Yosemite正式版</h1>
+	<div class="entry-content" itemprop="articleBody"><p>之前由于自己的mac用过一年多了，垃圾文件比较多，各种软件以及环境参数的配置也很乱，趁Yosemite正式版刚好发布了，就想完全重新安装，现把安装过程和所遇到的问题记录如下。</p>
+
+<p>在完全重新安装之前，我是用AppStore升级安装过一次，不过升级之后，几个常用的软件都不能用了，经池建强老师的Yosemite上篇文章的指点，这些软件都能用了，但是还是有一些配置环境参数问题，遂决定完全重装一次。</p>
+
+<p>经网上搜一大堆教程，想要完全重装，必须开机同时按住<code>option</code>或者<code>command + R</code>然后把硬盘东西全部抹去，这样一来，问题来了，系统没了，完全启动不了，万幸的是我之前已经硬盘资料备份了，但是没有做系统备份，现在也只有通过网络恢复了，但是等待数小时的结果是，网络异常，在线更新恢复失败。故，只要拿出杀手锏，U盘安装。</p>
+
+<h2>安装前准备</h2>
+
+<ul>
+<li>16G U盘一个</li>
+<li>Windows电脑一台（如果你还有另一台mac电脑，就不需要下面的镜像烧制软件了，mac自带就有，也方便得多）</li>
+<li>Yosemite系统镜像一份 <a href="http://pan.baidu.com/s/1mgqSdfy">Yosemite 14A389 正式版</a></li>
+<li>镜像烧制软件 <a href="http://www.acutesystems.com/scrtm.htm">TransMac</a>付费软件，试用期15天，完全够用</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>安装详细过程</h2>
+
+<ul>
+<li>以管理员身份打开TransMac，如下图
+<img src="http://kejiwen.com/wp-content/uploads/2014/10/TransMac.jpg" alt="TransMac截图" /></li>
+<li>格式化U盘为Mac格式，如图第一个红框 Format Disk for Mac</li>
+<li>然后Restore with Disk Image，选择下载好的Yosemite镜像</li>
+<li>大概等5分钟左右，就完成写入，U盘系统制作完毕</li>
+<li>把U盘插上要安装的Mac上，开机按住 <code>option</code>选择U盘即可开始安装了。</li>
+</ul>
+
+
+<h2>Android开发环境配置</h2>
+
+<ul>
+<li>IDE下载 <a href="https://dl.google.com/android/studio/install/0.8.6/android-studio-bundle-135.1339820-mac.dmg">Android studio</a> 或则<a href="https://dl.google.com/android/adt/adt-bundle-mac-x86_64-20140702.zip">ADT</a></li>
+<li>JDK1.6 <a href="http://support.apple.com/kb/dl1572">苹果官方提供安装包</a></li>
+<li>安装好jdk1.6后大多数软件10.9.5下不能正常工作的软件基本都能正常运行了</li>
+</ul>
+
+
+<h2>终端配置</h2>
+
+<ul>
+<li>iTerm <a href="http://iterm2.com/">下载</a></li>
+<li>编辑<code>/etc/bashrc</code>文件，将<code>PS1的值</code>改为<code>\W\$</code>主要是解决名称过长问题</li>
+</ul>
+
+
+<h2>其他软件</h2>
+
+<ul>
+<li>如下图，大家按需下载，反正我基本上就这些
+<img src="http://kejiwen.com/wp-content/uploads/2014/10/soft-set.png" alt="TransMac截图" /></li>
+</ul>
+
+
+<p>以上，基本就是我全新安装Yosemite的全过程。</p>
+</div>
+
+</article>
+
+	<!-- <div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div> &#8211;>
+
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Qifa
+
+
+Design credit: <a href="http://kejiwen.com">kejiwen.com</a>
+</footer>
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'qifa';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://tangqifa.github.io/blog/2014/12/08/wan-quan-zhong-xin-an-zhuang-yosemitezheng-shi-ban/';
+        var disqus_url = 'http://tangqifa.github.io/blog/2014/12/08/wan-quan-zhong-xin-an-zhuang-yosemitezheng-shi-ban/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
