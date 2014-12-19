@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Tech&Life]]></title>
   <link href="http://tangqifa.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2014-12-14T11:57:01+08:00</updated>
+  <updated>2014-12-19T14:23:17+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
     <name><![CDATA[tangqifa]]></name>
@@ -74,10 +74,34 @@ rbenv rehash
 bundle install
 </code></p>
 
+<h2>更新</h2>
+
+<pre><code class="">cd octopress    
+git pull origin source      
+cd _deploy   
+git pull origin master
+</code></pre>
+
+<h2>提交</h2>
+
+<p>生成预览
+<code>
+rake generate #生成
+rake preview #预览
+rake deploy #发布
+</code>
+提交代码库
+<code>
+cd octopress
+git add .
+git commit -m "commit log"
+git push origin source
+</code></p>
+
 <h2>遇到的问题总结</h2>
 
 <ol>
-<li>ruby版本必须升级到最新版本，在Yosemite上</li>
+<li>ruby版本必须升级到最新版本，否则在Yosemite上在执行<code>gem install bundler</code>会报错；</li>
 <li>初始化name.github.io最好是空项目，否则在提交的时候容易出现问题</li>
 </ol>
 

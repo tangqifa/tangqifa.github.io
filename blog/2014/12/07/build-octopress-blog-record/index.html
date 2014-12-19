@@ -182,10 +182,46 @@
 </span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
 
 
+<h2>更新</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress    
+</span><span class='line'>git pull origin source      
+</span><span class='line'>cd _deploy   
+</span><span class='line'>git pull origin master</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>提交</h2>
+
+<p>生成预览</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate #生成
+</span><span class='line'>rake preview #预览
+</span><span class='line'>rake deploy #发布</span></code></pre></td></tr></table></div></figure>
+
+
+<p>提交代码库</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
+</span><span class='line'>git add .
+</span><span class='line'>git commit -m "commit log"
+</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
 <h2>遇到的问题总结</h2>
 
 <ol>
-<li>ruby版本必须升级到最新版本，在Yosemite上</li>
+<li>ruby版本必须升级到最新版本，否则在Yosemite上在执行<code>gem install bundler</code>会报错；</li>
 <li>初始化name.github.io最好是空项目，否则在提交的时候容易出现问题</li>
 </ol>
 
