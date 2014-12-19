@@ -56,9 +56,32 @@ gem install bundler
 rbenv rehash  
 bundle install
 ```
+## 更新
+
+```  
+cd octopress    
+git pull origin source      
+cd _deploy   
+git pull origin master
+```
+##提交
+生成预览
+```
+rake generate #生成
+rake preview #预览
+rake deploy #发布
+```
+提交代码库
+```
+cd octopress
+git add .
+git commit -m "commit log"
+git push origin source
+```
 ## 遇到的问题总结
-1. ruby版本必须升级到最新版本，在Yosemite上 
+1. ruby版本必须升级到最新版本，否则在Yosemite上在执行`gem install bundler`会报错； 
 2. 初始化name.github.io最好是空项目，否则在提交的时候容易出现问题
+
 
 
 

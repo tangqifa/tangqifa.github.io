@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "算法之字符串"
+title: "Java中优雅地使用字符串"
 date: 2014-06-12 13:34:48 +0800
 comments: true
 categories: 算法
@@ -8,7 +8,6 @@ categories: 算法
 
 > 可以证明：字符串操作是计算机程序设计中最常见的行为。
 
-##Java中优雅地使用字符串
 1. String类是final的，不可被继承。String类源码签名：`public final class String`
 
 2. String类是的本质是字符数组char[], 并且其值不可改变。源码中声明：`private final char value[]`;
@@ -62,7 +61,6 @@ public class StringTest {
     }
 }
 </pre>
--------------------------------
 Output:
 
 `+`所消耗的时间：19080毫米
@@ -73,10 +71,10 @@ Output:
 
 从上面的运行结果可以看出，append()速度最快，concat()次之，+最慢。原因请看下面分解:
 
-  1. `+`方式拼接字符串
+##`+`方式拼接字符串   
 在前面我们知道编译器对+进行了优化，它是使用StringBuilder的append()方法来进行处理的，我们知道StringBuilder的速度比StringBuffer的速度更加快，但是为何运行速度还是那样呢？主要是因为编译器使用append()方法追加后要同toString()转换成String字符串，也就说  str +=”b”等同于str = new StringBuilder(str).append("b").toString();它变慢的关键原因就在于new StringBuilder()和toString()，这里可是创建了10W个StringBuilder对象，而且每次还需要将其转换成String，速度能不慢么？
 
-2.  concat()方法拼接字符串
+##concat()方法拼接字符串
 <pre>
 public String concat(String str) {
     int otherLen = str.length();
@@ -89,9 +87,9 @@ public String concat(String str) {
     return new String(0, count + otherLen, buf);
     }
     </pre>
-    这是concat()的源码，它看上去就是一个数字拷贝形式，我们知道数组的处理速度是非常快的，但是由于该方法最后是这样的：return new String(0, count + otherLen, buf);这同样也创建了10W个字符串对象，这是它变慢的根本原因。
+这是concat()的源码，它看上去就是一个数字拷贝形式，我们知道数组的处理速度是非常快的，但是由于该方法最后是这样的：return new String(0, count + otherLen, buf);这同样也创建了10W个字符串对象，这是它变慢的根本原因。
 
-3.append()方法拼接字符串
+##append()方法拼接字符串
 <pre>
 public synchronized StringBuffer append(String str) {
     super.append(str);
@@ -112,20 +110,4 @@ public AbstractStringBuilder append(String str) {
     return this;
     }
     </pre>
-     与concat()方法相似，它也是进行字符数组处理的，加长，然后拷贝，但是请注意它最后是返回并没有返回一个新串，而是返回本身，也就说这这个10W次的循环过程中，它并没有产生新的字符串对象。通过上面的分析，我们需要在合适的场所选择合适的字符串拼接方式，但是并不一定就要选择append()和concat()方法，原因在于+根据符合我们的编程习惯，只有到了使用append()和concat()方法确实是可以对我们系统的效率起到比较大的帮助，才会考虑，同时鄙人也真的没有怎么用过concat()方法。
-
-##相关算法总结
-
-1. Hash算法
-2. 加密解密算法
-3. 匹配算法
-   1. KMP
-   2. 其他
-   3. 正则
-4. 查找算法
-5. 比较算法
-6. 压缩算法
-
-##相关面试题解析
-1. 字符串翻转
-2. 其他
+与concat()方法相似，它也是进行字符数组处理的，加长，然后拷贝，但是请注意它最后是返回并没有返回一个新串，而是返回本身，也就说这这个10W次的循环过程中，它并没有产生新的字符串对象。通过上面的分析，我们需要在合适的场所选择合适的字符串拼接方式，但是并不一定就要选择append()和concat()方法，原因在于+根据符合我们的编程习惯，只有到了使用append()和concat()方法确实是可以对我们系统的效率起到比较大的帮助，才会考虑，同时鄙人也真的没有怎么用过concat()方法。
