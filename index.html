@@ -206,23 +206,12 @@ public static  String getCertMsg(Context context, String packageName) {
       return value.matches(&ldquo;^(?=.<em>[0-9])(?=.</em>[a-zA-Z])(?=\S+$).{8,}$&rdquo;);
   }
 </pre></p></li>
-<li><p>存在问题：口令连续尝试次数没有限制 <br/>
-整改方案：增加连续尝试错误次数，建议5次</p></li>
-<li><p>存在问题：未设置会话超时时间 <br/>
-整改方案：增加超时时间，未操作一段时间后，再次操作需要重新登录,设置token超时机制</p></li>
-<li><p>存在问题：网络传输中未对数据进行加密,比如密码等 <br/>
-整改方案：对传输的数据包进行整体加密，比如采用AES加密等</p></li>
-<li><p>存在问题：密码输入调用系统键盘，未采用自主编写安全键盘，且无法进行按键随即布局，无法防止截屏记录 <br/>
-整改方案：采用自主编写的安全键盘进行敏感信息的输入，同时做到按键布局随机，取消按键气泡等按下状态显示效果。同时按下的按键做到内存中加密存储，参考我的开源项目<a href="https://github.com/tangqifa/AndroidSecurityKeyboard">AndroidSecurityKeyboard</a></p></li>
-<li><p>存在问题：数据传输MAC校验 <br/>
-整改方案：增加MAC校验，例如：HMAC，对整体url做哈希，并加入特定的前缀</p></li>
-<li><p>存在问题：软件更新通过HTTP方式，未采取安全传输方式  <br/>
-整改方案：采用HTTPS</p></li>
 </ul>
 
 
+
 		
-		
+		<a href="/blog/2015/06/18/androidkai-fa-zhong-chang-jian-an-quan-wen-ti/" class="more-link">阅读全文&rarr;</a>
 	</div>
 
 </article>

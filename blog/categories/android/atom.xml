@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Tech&Life]]></title>
   <link href="http://tangqifa.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2015-06-18T18:03:24+08:00</updated>
+  <updated>2015-06-18T18:08:50+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
     <name><![CDATA[tangqifa]]></name>
@@ -91,6 +91,13 @@ public static  String getCertMsg(Context context, String packageName) {
       return value.matches(&ldquo;^(?=.<em>[0-9])(?=.</em>[a-zA-Z])(?=\S+$).{8,}$&rdquo;);
   }
 </pre></p></li>
+</ul>
+
+
+<!-- more -->
+
+
+<ul>
 <li><p>存在问题：口令连续尝试次数没有限制 <br/>
 整改方案：增加连续尝试错误次数，建议5次</p></li>
 <li><p>存在问题：未设置会话超时时间 <br/>
