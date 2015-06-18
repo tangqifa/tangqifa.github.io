@@ -78,6 +78,19 @@ git add .
 git commit -m "commit log"
 git push origin source
 ```
+## 写博客
+```
+rake new_post["myTitle"]
+```
+文章生成在目录下的source/_posts目录下。文章是markdown格式的,可以通过相关软件编辑。   
+写完后就可以部署更新文章到github上了   
+```
+rake generate
+git add .
+git commit -am "Some comment here."   
+git push origin source
+rake deploy
+```
 ## 遇到的问题总结
 1. ruby版本必须升级到最新版本，否则在Yosemite上在执行`gem install bundler`会报错； 
 2. 初始化name.github.io最好是空项目，否则在提交的时候容易出现问题
