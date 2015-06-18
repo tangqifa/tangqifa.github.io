@@ -4,7 +4,7 @@
   <title><![CDATA[Tech&Life]]></title>
   <link href="http://tangqifa.github.io/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2015-06-18T17:48:22+08:00</updated>
+  <updated>2015-06-18T18:03:24+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
     <name><![CDATA[tangqifa]]></name>
@@ -418,6 +418,27 @@ public enum Singleton {
 </span><span class='line'>git add .
 </span><span class='line'>git commit -m "commit log"
 </span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>写博客</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["myTitle"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>文章生成在目录下的source/_posts目录下。文章是markdown格式的,可以通过相关软件编辑。 <br/>
+写完后就可以部署更新文章到github上了</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>git add .
+</span><span class='line'>git commit -am "Some comment here."   
+</span><span class='line'>git push origin source
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>遇到的问题总结</h2>

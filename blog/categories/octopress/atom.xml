@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Tech&Life]]></title>
   <link href="http://tangqifa.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://tangqifa.github.io/"/>
-  <updated>2015-06-18T17:48:22+08:00</updated>
+  <updated>2015-06-18T18:03:24+08:00</updated>
   <id>http://tangqifa.github.io/</id>
   <author>
     <name><![CDATA[tangqifa]]></name>
@@ -96,6 +96,21 @@ cd octopress
 git add .
 git commit -m "commit log"
 git push origin source
+</code></p>
+
+<h2>写博客</h2>
+
+<pre><code>rake new_post["myTitle"]
+</code></pre>
+
+<p>文章生成在目录下的source/_posts目录下。文章是markdown格式的,可以通过相关软件编辑。 <br/>
+写完后就可以部署更新文章到github上了 <br/>
+<code>
+rake generate
+git add .
+git commit -am "Some comment here."   
+git push origin source
+rake deploy
 </code></p>
 
 <h2>遇到的问题总结</h2>
